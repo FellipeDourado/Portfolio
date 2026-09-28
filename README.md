@@ -24,6 +24,10 @@ O portfólio está organizado em diferentes áreas:
 - HTML5
 - CSS3
 
+## Acesse o portfólio
+
+🔗 https://fellipedourado-portfolio.vercel.app/
+
 ## 📂 Estrutura do projeto
 
 ```text
