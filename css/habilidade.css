@@ -176,9 +176,11 @@ header {
 }
 
 .carousel-item img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
+    display: block;
+    width: 70%;
+    max-height: 350px;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 footer {
