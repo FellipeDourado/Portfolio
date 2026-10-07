@@ -8,11 +8,6 @@ menuTrigger.addEventListener("click", () => {
 
 // Atualiza o ano atual no footer
 
-const anoAtual =
-  new Date().getFullYear();
+const anoAtual = document.getElementById("ano-atual");
 
-
-document.getElementById(
-  "ano-atual"
-).textContent =
-  anoAtual;
+anoAtual.textContent = new Date().getFullYear();

@@ -3,64 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Portfólio</title>
 </head>
+
 <body>
-<header> <img src="logo.png" alt="Logo do Portfólio" class="logo">
+
+<header> 
+    <img class="logo" src="./assets/logo preta.png" alt="Logo do Portfólio">
      <button class="menu_botao" id="menuTrigger"> EXPLORE
      <span>↗</span>
      </button>
 
       <nav class="menu" id="menu">
-         <a href="#sobre"> <span>01</span> SOBRE </a> 
-         <a href="#projetos"> <span>02</span> PROJETOS </a>
-          <a href="#experiencia"> <span>03</span> EXPERIÊNCIA </a>
-           <a href="#habilidades"> <span>04</span> HABILIDADES </a>
-            <a href="#curriculo"> <span>05</span> CURRÍCULO </a> 
-            <a href="#contato"> <span>06</span> CONTATO </a> 
+         <a href="index.html"> <span>01</span> SOBRE </a> 
+         <a href="../html/projetos.html"> <span>02</span> PROJETOS </a>
+          <a href="../html/experiencia.html"> <span>03</span> EXPERIÊNCIA </a>
+           <a href="../html/habilidades.html"> <span>04</span> HABILIDADES </a>   
         </nav>
-        <button class="curriculo" href="/curriculo/fellipe-dourado.pdf" target="_blank" alt="curriculo">Currículo</button>
+        <a class="curriculo" href="/curriculo/Fellipe_Dourado_-_Ciencia_da_Computacao.pdf" target="_blank" alt="curriculo">Currículo</a>
      </header>
-    </header>
+
     <main>
-        <section id="sobre">
-            <h1>Sobre Mim</h1>
-            <p>Olá! Meu nome é Fellipe Dourado e sou um desenvolvedor web apaixonado por criar experiências digitais incríveis. Tenho experiência em HTML, CSS, JavaScript e outras tecnologias web.</p>
-        </section>
+        <section class="sobre">
 
-        <section id="projetos">
-            <h1>Projetos</h1>
-            <div class="projeto">
-                <h2>Projeto 1</h2>
-                <p>Descrição do projeto 1.</p>
-            </div>
-            <div class="projeto">
-                <h2>Projeto 2</h2>
-                <p>Descrição do projeto 2.</p>
-            </div>
-        </section>
+    <div class="sobre_texto">
+        <h1>Fellipe Dourado</h1>
+        <br>
+        <p>
+           Sou Fellipe Dourado, estudante de Ciência da Computação e desenvolvedor Front-End em formação. Meu interesse está em criar interfaces que sejam simples de entender, agradáveis de usar e bem construídas por trás da tela. Atualmente, trabalho com HTML, CSS e JavaScript, explorando cada projeto como uma oportunidade para evoluir minhas habilidades em desenvolvimento e design.
+        </p>
+    </div>
+    <img 
+        src="./assets/perfil.png" 
+        alt="Foto de Fellipe Dourado"
+        class="perfil">
 
-        <section id="contato">
-            <h1>Contato</h1>
-            <form action="#" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+</section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <section id="contato" class="contato">
+    <div class="contato_titulo">
+        <h2>Contato</h2>
+    </div>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
+    <div class="contato_links">
+        <a href="https://www.linkedin.com/in/fedorado/" 
+           target="_blank" 
+           class="contato_item">
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+            <span>LINKEDIN</span>
+            <p>Fellipe Dourado ↗</p>
+        </a>
+        <a href="https://github.com/FellipeDourado" 
+           target="_blank" 
+           class="contato_item">
+            <span>GITHUB</span>
+            <p>FellipeDourado ↗</p>
+        </a>
+
+    </div>
+
+</section>
     </main>
     <footer>
-        <p>&copy; 2026 Fellipe Dourado. Todos os direitos reservados.</p>
+        <p>&copy; <span id="ano-atual"></span> Fellipe Dourado. Todos os direitos reservados.</p>
     </footer>
 
 <script src="script.js"></script>
