@@ -1,4 +1,15 @@
-
+:root {
+    --cor-primaria: #F2F2F2; /* texto */
+    --cor-secundaria: #A0A0A0; /* texto secundário */
+    --cor-terciaria-hover: #DADADA; /* segundaria */
+    --cor-quaternaria: #303030; /* bordas */
+    --cor-quaternaria-hover: #666666; /* bordas hover */
+    --cor-quinaria: transparent; /* botões */
+    --cor-quinaria-hover: #F2F2F2; /* botões hover */
+    --cor-sextaria: #F2F2F2; /* texto botões */
+    --cor-sextaria-hover: #050505; /* texto botões hover */
+    --cor-settaria: #D0D0D0; /* links */
+}
 
 header {
     width: 100%;
@@ -64,19 +75,29 @@ body::before {
     grid-row: 1;
     align-self: center;
     justify-self: end;
-    margin: 0;
+    margin: 0 70px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    color: #000;
-    border: solid 2px #000;
+    background-color: var(--cor-quinaria);
+    color: var(--cor-sextaria);
+    border: solid 2px var(--cor-quaternaria-hover);
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
     padding: 15px 32px;
     font-size: 16px;
     cursor: pointer;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.curriculo:hover {
+    color: var(--cor-sextaria-hover);
+    background-color: var(--cor-quinaria-hover);
+    border-color: var(--cor-quinaria-hover);
 }
 
 .menu_botao {
@@ -85,8 +106,9 @@ body::before {
     align-self: center;
     justify-self: center;
     margin: 0;
-    background-color: transparent;
-    color: #000;
+    background-color: var(--cor-quinaria);
+    color: var(--cor-sextaria);
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
@@ -95,6 +117,11 @@ body::before {
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu_botao:hover {
+    color: var(--cor-terciaria-hover);
 }
 
 .menu {
@@ -108,8 +135,8 @@ body::before {
     opacity: 0;
     visibility: hidden;
     transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+        opacity 0.3s ease,
+        visibility 0.3s ease;
     z-index: 5;
 }
 
@@ -123,26 +150,26 @@ body::before {
     align-items: center;
     gap: 15px;
     padding: 13px 0;
-    border-bottom: 1px solid #ccc;
-    color: #000;
+    border-bottom: 1px solid var(--cor-quaternaria);
+    color: var(--cor-settaria);
     text-decoration: none;
     font-size: 14px;
     transition:
-     padding-left 0.2s ease,
-     color 0.2s ease;
+        padding-left 0.2s ease,
+        color 0.2s ease;
 }
 
 .menu a:first-child {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--cor-quaternaria);
 }
 
 .menu a:hover {
     padding-left: 8px;
-    color: #666;
+    color: var(--cor-terciaria-hover);
 }
 
 .menu a span {
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 11px;
 }
 
@@ -153,17 +180,20 @@ body::before {
     gap: 60px;
     margin-top: 90px;
     padding-bottom: 100px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--cor-quaternaria);
     margin-bottom: 100px;
 }
 
 h1 {
     grid-column: 1;
+    color: var(--cor-primaria);
     font-size: 32px;
     font-weight: 500;
 }
+
 .sobre_texto {
     grid-column: 1;
+    color: var(--cor-secundaria);
 }
 
 .perfil {
@@ -186,25 +216,22 @@ h1 {
     gap: 80px;
 }
 
-
 .contato_titulo {
     grid-column: 1;
 }
 
-
 .contato_titulo span {
     font-size: 12px;
     letter-spacing: 2px;
-    color: #777;
+    color: var(--cor-secundaria);
 }
-
 
 .contato_titulo h2 {
     margin-top: 25px;
+    color: var(--cor-primaria);
     font-size: 32px;
     font-weight: 500;
 }
-
 
 .contato_links {
     grid-column: 2;
@@ -212,41 +239,40 @@ h1 {
     flex-direction: column;
 }
 
-
 .contato_item {
     display: grid;
     grid-template-columns: 120px 1fr;
     align-items: center;
     padding: 22px 0;
-    border-bottom: 1px solid #ddd;
-    color: #000;
+    border-bottom: 1px solid var(--cor-quaternaria);
+    color: var(--cor-primaria);
     text-decoration: none;
-    transition: padding-left 0.25s ease;
+    transition:
+        padding-left 0.25s ease,
+        color 0.25s ease;
 }
-
 
 .contato_item:first-child {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--cor-quaternaria);
 }
-
 
 .contato_item:hover {
     padding-left: 10px;
+    color: var(--cor-terciaria-hover);
 }
-
 
 .contato_item span {
     font-size: 11px;
     letter-spacing: 1.5px;
-    color: #888;
+    color: var(--cor-secundaria);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
 .contato_item p {
     margin: 0;
+    color: inherit;
     font-size: 16px;
 }
 
@@ -254,7 +280,6 @@ h1 {
     width: 20px;
     height: 20px;
     margin-left: 5px;
-
 }
 
 .projetos {
@@ -271,12 +296,13 @@ h1 {
 .projetos_titulo > span {
     display: block;
     margin-bottom: 15px;
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 12px;
 }
 
 .projetos_titulo h2 {
     margin: 0 0 20px;
+    color: var(--cor-primaria);
     font-size: 52px;
     font-weight: 500;
 }
@@ -284,7 +310,7 @@ h1 {
 .projetos_titulo p {
     max-width: 550px;
     margin: 0;
-    color: #666;
+    color: var(--cor-secundaria);
     font-size: 16px;
     line-height: 1.6;
 }
@@ -300,14 +326,16 @@ h1 {
     grid-template-columns: 70px 1fr 50px;
     align-items: center;
     padding: 30px 0;
-    border-top: 1px solid #ddd;
-    color: #000;
+    border-top: 1px solid var(--cor-quaternaria);
+    color: var(--cor-primaria);
     text-decoration: none;
-    transition: padding 0.3s ease;
+    transition:
+        padding 0.3s ease,
+        color 0.3s ease;
 }
 
 .projeto_item:last-child {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--cor-quaternaria);
 }
 
 .projeto_item:hover {
@@ -317,12 +345,13 @@ h1 {
 .projeto_numero {
     align-self: start;
     padding-top: 5px;
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 12px;
 }
 
 .projeto_info h3 {
     margin: 0 0 10px;
+    color: var(--cor-primaria);
     font-size: 25px;
     font-weight: 500;
 }
@@ -330,24 +359,28 @@ h1 {
 .projeto_info p {
     max-width: 500px;
     margin: 0 0 15px;
-    color: #666;
+    color: var(--cor-secundaria);
     font-size: 14px;
     line-height: 1.5;
 }
 
 .projeto_tecnologias {
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 10px;
     letter-spacing: 1px;
 }
 
 .projeto_seta {
     justify-self: end;
+    color: var(--cor-primaria);
     font-size: 22px;
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 .projeto_item:hover .projeto_seta {
+    color: var(--cor-terciaria-hover);
     transform: translate(5px, -5px);
 }
 
@@ -390,12 +423,13 @@ h1 {
 .experiencia_titulo > span {
     display: block;
     margin-bottom: 15px;
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 12px;
 }
 
 .experiencia_titulo h2 {
     margin: 0 0 20px;
+    color: var(--cor-primaria);
     font-size: 52px;
     font-weight: 500;
 }
@@ -403,7 +437,7 @@ h1 {
 .experiencia_titulo p {
     max-width: 550px;
     margin: 0;
-    color: #666;
+    color: var(--cor-secundaria);
     font-size: 16px;
     line-height: 1.6;
 }
@@ -420,7 +454,7 @@ h1 {
 
 .experiencia_ano {
     padding-top: 5px;
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 12px;
 }
 
@@ -436,7 +470,7 @@ h1 {
     top: 10px;
     bottom: 0;
     width: 1px;
-    background-color: #ddd;
+    background-color: var(--cor-quaternaria);
 }
 
 .experiencia_item:last-child .experiencia_linha::before {
@@ -449,7 +483,7 @@ h1 {
     width: 9px;
     height: 9px;
     margin-top: 7px;
-    background-color: #000;
+    background-color: var(--cor-primaria);
     border-radius: 50%;
     z-index: 1;
 }
@@ -461,13 +495,14 @@ h1 {
 .experiencia_empresa {
     display: block;
     margin-bottom: 12px;
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 11px;
     letter-spacing: 1.5px;
 }
 
 .experiencia_conteudo h3 {
     margin: 0 0 15px;
+    color: var(--cor-primaria);
     font-size: 28px;
     font-weight: 500;
 }
@@ -475,13 +510,13 @@ h1 {
 .experiencia_conteudo p {
     max-width: 650px;
     margin: 0 0 20px;
-    color: #666;
+    color: var(--cor-secundaria);
     font-size: 15px;
     line-height: 1.7;
 }
 
 .experiencia_tecnologias {
-    color: #999;
+    color: var(--cor-secundaria);
     font-size: 10px;
     letter-spacing: 1px;
 }
