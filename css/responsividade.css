@@ -943,3 +943,13 @@ header {
         font-size: 8px;
     }
 }
+
+@media (max-width: 600px) {
+    .secao_numero {
+        margin-bottom: 35px;
+    }
+
+    .contato_titulo .secao_numero {
+        margin-bottom: 25px;
+    }
+}
