@@ -179,7 +179,7 @@ body::before {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 60px;
-    margin-top: 180px;
+    margin-top: 250px;
     padding-bottom: 100px;
     border-bottom: 1px solid var(--cor-quaternaria);
     margin-bottom: 100px;
@@ -550,6 +550,120 @@ h1 {
 
 .contato_titulo .secao_numero {
     margin-bottom: 90px;
+}
+
+/* FORMAÇÃO ACADÊMICA */
+
+.formacao {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 120px;
+}
+
+.formacao_titulo {
+    margin-bottom: 100px;
+}
+
+.formacao_titulo > span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--cor-secundaria);
+    font-size: 12px;
+}
+
+.formacao_titulo h2 {
+    margin: 0 0 20px;
+    color: var(--cor-primaria);
+    font-size: 52px;
+    font-weight: 500;
+}
+
+.formacao_titulo p {
+    max-width: 550px;
+    margin: 0;
+    color: var(--cor-secundaria);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.formacao_timeline {
+    width: 100%;
+}
+
+.formacao_item {
+    display: grid;
+    grid-template-columns: 100px 30px 1fr;
+    min-height: 260px;
+}
+
+.formacao_ano {
+    padding-top: 5px;
+    color: var(--cor-secundaria);
+    font-size: 12px;
+}
+
+.formacao_linha {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.formacao_linha::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--cor-quaternaria);
+}
+
+.formacao_item:last-child .formacao_linha::before {
+    bottom: auto;
+    height: 10px;
+}
+
+.formacao_linha span {
+    position: relative;
+    width: 9px;
+    height: 9px;
+    margin-top: 7px;
+    background-color: var(--cor-primaria);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.formacao_conteudo {
+    padding: 0 0 80px 50px;
+}
+
+.formacao_instituicao {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--cor-secundaria);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.formacao_conteudo h3 {
+    margin: 0 0 15px;
+    color: var(--cor-primaria);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.formacao_conteudo p {
+    max-width: 650px;
+    margin: 0 0 20px;
+    color: var(--cor-secundaria);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.formacao_status {
+    color: var(--cor-secundaria);
+    font-size: 10px;
+    letter-spacing: 1px;
 }
 
 footer {

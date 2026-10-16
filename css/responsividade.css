@@ -1,3 +1,7 @@
+/* ==============================
+   AJUSTES GERAIS
+============================== */
+
 *,
 *::before,
 *::after {
@@ -6,41 +10,50 @@
 
 html {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 img {
     max-width: 100%;
-}
-
-header {
-    width: 100%;
-    max-width: 100%;
-    transition: margin-bottom 0.3s ease;
-}
-
-.menu {
-    max-width: calc(100vw - 40px);
+    height: auto;
 }
 
 .projetos,
 .experiencia,
 .apresentacao,
-.contato {
+.contato,
+.formacao {
     width: 100%;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.projeto_info,
+.experiencia_conteudo,
+.formacao_conteudo,
+.contato_links {
+    min-width: 0;
+}
 
-/* HEADER */
+.projeto_info p,
+.experiencia_conteudo p,
+.formacao_conteudo p,
+.contato_item p {
+    overflow-wrap: anywhere;
+}
+
+
+/* ==============================
+   NOTEBOOK E TABLET
+============================== */
 
 @media (max-width: 1024px) {
 
@@ -52,144 +65,146 @@ header {
     header {
         height: 90px;
         grid-template-columns: minmax(0, 1fr) auto auto;
-        column-gap: 15px;
+        column-gap: 12px;
     }
 
     .logo {
-        grid-column: 1;
-        width: 190px;
+        width: clamp(140px, 19vw, 190px);
         height: auto;
         justify-self: start;
     }
 
-    .menu_botao {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: center;
-        padding: 12px 20px;
-        font-size: 15px;
+    .menu_botao,
+    .curriculo {
+        padding: 12px 16px;
+        font-size: 14px;
         white-space: nowrap;
     }
 
     .curriculo {
-        grid-column: 3;
-        grid-row: 1;
-        justify-self: end;
         margin: 0;
-        padding: 12px 20px;
-        font-size: 15px;
-        white-space: nowrap;
     }
 
     .menu {
         top: 90px;
+        width: min(300px, calc(100vw - 60px));
     }
 
     header:has(.menu.ativo) {
         margin-bottom: 260px;
     }
 
-
     /* SOBRE */
 
     .sobre {
-        width: 100%;
-        gap: 50px;
+        gap: 40px;
     }
 
     .perfil {
-        width: 260px;
-        height: 260px;
+        width: 240px;
+        height: 240px;
     }
-
 
     /* PROJETOS */
 
     .projetos {
         padding-top: 80px;
-        padding-bottom: 100px;
+        padding-bottom: 90px;
     }
 
     .projetos_titulo {
-        margin-bottom: 70px;
+        margin-bottom: 60px;
     }
 
     .projetos_titulo h2 {
-        font-size: 46px;
+        font-size: clamp(38px, 4.5vw, 46px);
     }
 
     .projeto_item {
-        grid-template-columns: 60px minmax(0, 1fr) 40px;
+        grid-template-columns: 55px minmax(0, 1fr) 35px;
+        gap: 12px;
     }
 
     .projeto_item img {
-        width: 220px;
-        height: 145px;
-        right: 40px;
+        width: 200px;
+        height: auto;
+        right: 20px;
     }
 
+    /* EXPERIÊNCIA E FORMAÇÃO */
 
-    /* EXPERIÊNCIA */
-
-    .experiencia {
+    .experiencia,
+    .formacao {
         padding-top: 80px;
-        padding-bottom: 100px;
+        padding-bottom: 90px;
     }
 
-    .experiencia_titulo {
-        margin-bottom: 80px;
+    .experiencia_titulo,
+    .formacao_titulo {
+        margin-bottom: 70px;
     }
 
-    .experiencia_titulo h2 {
-        font-size: 46px;
+    .experiencia_titulo h2,
+    .formacao_titulo h2 {
+        font-size: clamp(38px, 4.5vw, 46px);
     }
 
-    .experiencia_item {
+    .experiencia_item,
+    .formacao_item {
         grid-template-columns: 80px 25px minmax(0, 1fr);
     }
 
-    .experiencia_conteudo {
-        padding-left: 35px;
+    .experiencia_conteudo,
+    .formacao_conteudo {
+        padding-left: 30px;
     }
 
+    .experiencia_conteudo h3,
+    .formacao_conteudo h3 {
+        font-size: 25px;
+    }
 
     /* HABILIDADES */
 
     .apresentacao {
         padding-top: 80px;
-        padding-bottom: 100px;
+        padding-bottom: 90px;
     }
 
     .apresentacao__titulo {
-        font-size: 44px;
+        font-size: clamp(38px, 4.3vw, 44px);
     }
 
     .carousel-item img {
-        width: 55%;
-        max-height: 280px;
+        max-width: 65%;
+        max-height: 260px;
+        object-fit: contain;
     }
-
 
     /* CONTATO */
 
     .contato {
-        padding-top: 80px;
-        padding-bottom: 100px;
-        gap: 60px;
+        gap: 45px;
+        padding: 80px 20px 90px;
+    }
+
+    .contato_item {
+        grid-template-columns: 100px minmax(0, 1fr);
     }
 }
 
 
-/* CELULAR */
+/* ==============================
+   TABLETS E CELULARES
+============================== */
 
 @media (max-width: 768px) {
 
     body {
         padding-left: 20px;
         padding-right: 20px;
-        padding-bottom: 70px;
+        padding-bottom: 75px;
     }
-
 
     /* HEADER */
 
@@ -200,37 +215,20 @@ header {
     }
 
     .logo {
-        grid-column: 1;
-        width: 145px;
-        height: auto;
-        justify-self: start;
+        width: clamp(100px, 19vw, 145px);
     }
 
-    .menu_botao {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: center;
-        padding: 9px 11px;
-        font-size: 13px;
-        white-space: nowrap;
-    }
-
+    .menu_botao,
     .curriculo {
-        display: flex;
-        grid-column: 3;
-        grid-row: 1;
-        justify-self: end;
-        margin: 0;
         padding: 9px 11px;
-        font-size: 13px;
-        white-space: nowrap;
+        font-size: 12px;
     }
 
     .menu {
         top: 80px;
         right: 0;
         left: auto;
-        width: 240px;
+        width: min(240px, calc(100vw - 40px));
         max-width: calc(100vw - 40px);
         transform: none;
     }
@@ -245,18 +243,16 @@ header {
         margin-bottom: 250px;
     }
 
-
     /* SOBRE */
 
     .sobre {
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 40px;
+        gap: 30px;
         margin-top: 60px;
-        padding-bottom: 70px;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
+        padding-bottom: 60px;
     }
 
     .sobre > * {
@@ -264,39 +260,35 @@ header {
     }
 
     h1 {
-        font-size: 30px;
-        line-height: 1.15;
+        font-size: clamp(27px, 5vw, 32px);
+        line-height: 1.2;
     }
 
     .sobre_texto {
-        max-width: 100%;
         font-size: 15px;
         line-height: 1.7;
     }
 
     .perfil {
-        width: 220px;
-        height: 220px;
+        width: clamp(170px, 35vw, 220px);
+        height: clamp(170px, 35vw, 220px);
         align-self: center;
     }
-
 
     /* PROJETOS */
 
     .projetos {
-        width: 100%;
-        padding-top: 70px;
-        padding-bottom: 100px;
+        padding-top: 60px;
+        padding-bottom: 80px;
     }
 
     .projetos_titulo {
-        width: 100%;
-        margin-bottom: 55px;
+        margin-bottom: 45px;
     }
 
     .projetos_titulo h2 {
-        font-size: 40px;
-        line-height: 1.1;
+        font-size: clamp(32px, 5.5vw, 40px);
+        line-height: 1.15;
     }
 
     .projetos_titulo p {
@@ -305,16 +297,11 @@ header {
         line-height: 1.7;
     }
 
-    .projetos_lista {
-        width: 100%;
-    }
-
     .projeto_item {
-        width: 100%;
         min-height: 0;
-        grid-template-columns: 35px minmax(0, 1fr) 25px;
+        grid-template-columns: 28px minmax(0, 1fr) 20px;
         gap: 10px;
-        padding: 25px 0;
+        padding: 24px 0;
     }
 
     .projeto_item:hover {
@@ -325,26 +312,21 @@ header {
         font-size: 10px;
     }
 
-    .projeto_info {
-        min-width: 0;
-    }
-
     .projeto_info h3 {
-        font-size: 21px;
-        line-height: 1.25;
+        font-size: 20px;
+        line-height: 1.3;
     }
 
     .projeto_info p {
-        max-width: 100%;
         font-size: 13px;
-        line-height: 1.6;
+        line-height: 1.65;
     }
 
     .projeto_tecnologias {
         display: block;
-        max-width: 100%;
-        font-size: 8px;
-        line-height: 1.6;
+        font-size: 10px;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
         overflow-wrap: anywhere;
     }
 
@@ -356,194 +338,210 @@ header {
         display: none;
     }
 
+    /* EXPERIÊNCIA E FORMAÇÃO */
 
-    /* EXPERIÊNCIA */
-
-    .experiencia {
-        width: 100%;
-        padding-top: 70px;
-        padding-bottom: 100px;
+    .experiencia,
+    .formacao {
+        padding-top: 60px;
+        padding-bottom: 80px;
     }
 
-    .experiencia_titulo {
-        width: 100%;
-        margin-bottom: 70px;
+    .experiencia_titulo,
+    .formacao_titulo {
+        margin-bottom: 50px;
     }
 
-    .experiencia_titulo h2 {
-        font-size: 40px;
-        line-height: 1.1;
+    .experiencia_titulo h2,
+    .formacao_titulo h2 {
+        font-size: clamp(30px, 5.5vw, 40px);
+        line-height: 1.15;
     }
 
-    .experiencia_titulo p {
+    .experiencia_titulo p,
+    .formacao_titulo p {
         max-width: 100%;
         font-size: 14px;
         line-height: 1.7;
     }
 
-    .experiencia_timeline {
-        width: 100%;
-    }
-
-    .experiencia_item {
-        width: 100%;
-        grid-template-columns: 45px 15px minmax(0, 1fr);
+    .experiencia_item,
+    .formacao_item {
+        grid-template-columns: 48px 15px minmax(0, 1fr);
         min-height: 0;
     }
 
-    .experiencia_ano {
-        padding-top: 4px;
+    .experiencia_ano,
+    .formacao_ano {
         font-size: 10px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
     }
 
-    .experiencia_linha {
+    .experiencia_linha,
+    .formacao_linha {
         width: 15px;
     }
 
-    .experiencia_linha span {
+    .experiencia_linha span,
+    .formacao_linha span {
         width: 8px;
         height: 8px;
+        flex-shrink: 0;
     }
 
-    .experiencia_conteudo {
-        min-width: 0;
-        padding: 0 0 60px 20px;
+    .experiencia_conteudo,
+    .formacao_conteudo {
+        padding: 0 0 50px 18px;
     }
 
-    .experiencia_empresa {
-        margin-bottom: 10px;
+    .experiencia_empresa,
+    .formacao_instituicao {
         font-size: 9px;
-        letter-spacing: 1.2px;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        overflow-wrap: anywhere;
     }
 
-    .experiencia_conteudo h3 {
+    .experiencia_conteudo h3,
+    .formacao_conteudo h3 {
         font-size: 21px;
         line-height: 1.35;
     }
 
-    .experiencia_conteudo p {
-        max-width: 100%;
+    .experiencia_conteudo p,
+    .formacao_conteudo p {
         font-size: 13px;
         line-height: 1.7;
     }
 
-    .experiencia_tecnologias {
-        max-width: 100%;
-        font-size: 8px;
-        line-height: 1.6;
+    .experiencia_tecnologias,
+    .formacao_status {
+        font-size: 9px;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
         overflow-wrap: anywhere;
     }
-
 
     /* HABILIDADES */
 
     .apresentacao {
-        width: 100%;
-        padding-top: 70px;
-        padding-bottom: 100px;
+        padding-top: 60px;
+        padding-bottom: 80px;
     }
 
-    .apresentacao__conteudo {
+    .apresentacao__conteudo,
+    .accordion,
+    .carousel {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .apresentacao__titulo {
-        margin-bottom: 45px;
-        font-size: 40px;
-        line-height: 1.1;
-    }
-
-    .accordion {
-        width: 100%;
+        margin-bottom: 40px;
+        font-size: clamp(30px, 5.5vw, 40px);
+        line-height: 1.15;
     }
 
     .accordion-button {
-        padding: 21px 0 !important;
-        font-size: 16px;
-        line-height: 1.4;
+        padding: 18px 0 !important;
+        font-size: 15px;
+        line-height: 1.5;
     }
 
     .accordion-body {
-        padding: 10px 0 30px !important;
+        padding: 10px 0 25px !important;
         font-size: 13px;
         line-height: 1.7;
     }
 
-    .carousel {
-        width: 100%;
-    }
-
     .carousel-item img {
-        width: 65%;
-        max-width: 65%;
+        display: block;
+        width: auto;
+        max-width: 80%;
         max-height: 220px;
-        height: auto;
+        margin: 0 auto;
+        object-fit: contain;
     }
-
 
     /* CONTATO */
 
     .contato {
-        width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 50px;
-        padding-top: 70px;
-        padding-bottom: 100px;
+        gap: 35px;
+        padding: 60px 0 80px;
     }
 
-    .contato_titulo {
+    .contato_titulo,
+    .contato_links {
         width: 100%;
     }
 
     .contato_titulo h2 {
         margin-top: 20px;
         font-size: 30px;
-        line-height: 1.15;
+        line-height: 1.2;
     }
 
     .contato_item {
-        width: 100%;
-        grid-template-columns: 85px minmax(0, 1fr);
-        gap: 15px;
-        padding: 20px 0;
+        grid-template-columns: 80px minmax(0, 1fr);
+        gap: 12px;
+        padding: 18px 0;
+    }
+
+    .contato_item span {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     .contato_item p {
-        min-width: 0;
         font-size: 14px;
-        overflow-wrap: anywhere;
-        word-break: break-word;
+        line-height: 1.6;
     }
 
+    .icone {
+        width: 18px;
+        height: 18px;
+    }
 
     /* FOOTER */
 
     footer {
-        width: 100%;
         height: 70px;
-        padding: 15px 20px;
+        padding: 12px 20px;
     }
 
     footer p {
         max-width: 100%;
         font-size: 10px;
-        line-height: 1.4;
+        line-height: 1.5;
         text-align: center;
+    }
+
+    /* NÚMEROS DAS SEÇÕES */
+
+    .secao_numero {
+        margin-bottom: 35px;
+    }
+
+    .contato_titulo .secao_numero {
+        margin-bottom: 25px;
     }
 }
 
 
-/* CELULAR PEQUENO */
+/* ==============================
+   CELULARES PEQUENOS
+============================== */
 
 @media (max-width: 480px) {
 
     body {
         padding-left: 15px;
         padding-right: 15px;
-        padding-bottom: 65px;
+        padding-bottom: 70px;
     }
-
 
     /* HEADER */
 
@@ -554,36 +552,18 @@ header {
     }
 
     .logo {
-        grid-column: 1;
-        width: 115px;
-        height: auto;
-        justify-self: start;
+        width: clamp(85px, 24vw, 115px);
     }
 
-    .menu_botao {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: center;
-        padding: 8px 8px;
-        font-size: 11px;
-        white-space: nowrap;
-    }
-
+    .menu_botao,
     .curriculo {
-        display: flex;
-        grid-column: 3;
-        grid-row: 1;
-        justify-self: end;
-        margin: 0;
-        padding: 8px 8px;
+        padding: 8px 7px;
         font-size: 11px;
-        white-space: nowrap;
     }
 
     .menu {
         top: 75px;
-        right: 0;
-        width: 210px;
+        width: min(220px, calc(100vw - 30px));
         max-width: calc(100vw - 30px);
     }
 
@@ -591,44 +571,42 @@ header {
         margin-bottom: 235px;
     }
 
-
     /* SOBRE */
 
     .sobre {
-        gap: 30px;
-        margin-top: 50px;
-        padding-bottom: 60px;
-        margin-bottom: 50px;
+        gap: 25px;
+        margin-top: 45px;
+        margin-bottom: 40px;
+        padding-bottom: 45px;
     }
 
     h1 {
-        font-size: 27px;
+        font-size: 26px;
     }
 
     .sobre_texto {
         font-size: 14px;
-        line-height: 1.65;
+        line-height: 1.7;
     }
 
     .perfil {
-        width: 190px;
-        height: 190px;
+        width: 175px;
+        height: 175px;
     }
-
 
     /* PROJETOS */
 
     .projetos {
-        padding-top: 60px;
-        padding-bottom: 90px;
+        padding-top: 50px;
+        padding-bottom: 65px;
     }
 
     .projetos_titulo {
-        margin-bottom: 45px;
+        margin-bottom: 35px;
     }
 
     .projetos_titulo h2 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .projetos_titulo p {
@@ -636,103 +614,115 @@ header {
     }
 
     .projeto_item {
-        grid-template-columns: 25px minmax(0, 1fr) 20px;
-        gap: 8px;
-        padding: 22px 0;
+        grid-template-columns: 23px minmax(0, 1fr) 17px;
+        gap: 7px;
+        padding: 20px 0;
     }
 
     .projeto_info h3 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .projeto_info p {
         font-size: 12px;
-        line-height: 1.55;
+        line-height: 1.6;
     }
 
     .projeto_tecnologias {
-        font-size: 7px;
+        font-size: 9px;
     }
 
     .projeto_seta {
         font-size: 15px;
     }
 
+    /* EXPERIÊNCIA E FORMAÇÃO */
 
-    /* EXPERIÊNCIA */
-
-    .experiencia {
-        padding-top: 60px;
-        padding-bottom: 90px;
+    .experiencia,
+    .formacao {
+        padding-top: 50px;
+        padding-bottom: 65px;
     }
 
-    .experiencia_titulo {
-        margin-bottom: 60px;
+    .experiencia_titulo,
+    .formacao_titulo {
+        margin-bottom: 40px;
     }
 
-    .experiencia_titulo h2 {
-        font-size: 34px;
+    .experiencia_titulo h2,
+    .formacao_titulo h2 {
+        font-size: 31px;
     }
 
-    .experiencia_titulo p {
+    .experiencia_titulo p,
+    .formacao_titulo p {
         font-size: 13px;
     }
 
-    .experiencia_item {
-        grid-template-columns: 38px 12px minmax(0, 1fr);
+    .experiencia_item,
+    .formacao_item {
+        grid-template-columns: 43px 12px minmax(0, 1fr);
     }
 
-    .experiencia_ano {
+    .experiencia_ano,
+    .formacao_ano {
         font-size: 9px;
     }
 
-    .experiencia_linha {
+    .experiencia_linha,
+    .formacao_linha {
         width: 12px;
     }
 
-    .experiencia_linha span {
+    .experiencia_linha span,
+    .formacao_linha span {
         width: 7px;
         height: 7px;
     }
 
-    .experiencia_conteudo {
-        padding-left: 18px;
-        padding-bottom: 50px;
+    .experiencia_conteudo,
+    .formacao_conteudo {
+        padding-left: 14px;
+        padding-bottom: 40px;
     }
 
-    .experiencia_empresa {
+    .experiencia_empresa,
+    .formacao_instituicao {
         font-size: 8px;
+        letter-spacing: 0.8px;
     }
 
-    .experiencia_conteudo h3 {
-        font-size: 19px;
+    .experiencia_conteudo h3,
+    .formacao_conteudo h3 {
+        font-size: 18px;
     }
 
-    .experiencia_conteudo p {
+    .experiencia_conteudo p,
+    .formacao_conteudo p {
         font-size: 12px;
         line-height: 1.65;
     }
 
-    .experiencia_tecnologias {
-        font-size: 7px;
+    .experiencia_tecnologias,
+    .formacao_status {
+        font-size: 8px;
     }
-
 
     /* HABILIDADES */
 
     .apresentacao {
-        padding-top: 60px;
-        padding-bottom: 90px;
+        padding-top: 50px;
+        padding-bottom: 65px;
     }
 
     .apresentacao__titulo {
-        margin-bottom: 40px;
-        font-size: 34px;
+        margin-bottom: 35px;
+        font-size: 31px;
     }
 
     .accordion-button {
-        padding: 19px 0 !important;
-        font-size: 15px;
+        padding: 16px 0 !important;
+        font-size: 14px;
     }
 
     .accordion-body {
@@ -740,32 +730,31 @@ header {
     }
 
     .carousel-item img {
-        width: 80%;
-        max-width: 80%;
+        max-width: 85%;
         max-height: 180px;
     }
-
 
     /* CONTATO */
 
     .contato {
-        padding-top: 60px;
-        padding-bottom: 90px;
-        gap: 40px;
+        gap: 30px;
+        padding-top: 50px;
+        padding-bottom: 65px;
     }
 
     .contato_titulo h2 {
-        font-size: 27px;
+        font-size: 26px;
     }
 
     .contato_item {
-        grid-template-columns: 70px minmax(0, 1fr);
-        gap: 10px;
-        padding: 18px 0;
+        grid-template-columns: 65px minmax(0, 1fr);
+        gap: 8px;
+        padding: 16px 0;
     }
 
     .contato_item span {
         font-size: 8px;
+        letter-spacing: 0.7px;
     }
 
     .contato_item p {
@@ -773,16 +762,15 @@ header {
     }
 
     .icone {
-        width: 17px;
-        height: 17px;
+        width: 16px;
+        height: 16px;
     }
-
 
     /* FOOTER */
 
     footer {
         height: 65px;
-        padding: 12px 15px;
+        padding: 10px 15px;
     }
 
     footer p {
@@ -791,7 +779,9 @@ header {
 }
 
 
-/* CELULAR MUITO PEQUENO */
+/* ==============================
+   CELULARES MUITO ESTREITOS
+============================== */
 
 @media (max-width: 360px) {
 
@@ -800,68 +790,50 @@ header {
         padding-right: 12px;
     }
 
-
     /* HEADER */
 
     header {
-        height: 70px;
-        grid-template-columns: minmax(0, 1fr) auto auto;
         column-gap: 4px;
     }
 
     .logo {
-        width: 100px;
+        width: 85px;
     }
 
-    .menu_botao {
-        padding: 7px 6px;
-        font-size: 10px;
-    }
-
+    .menu_botao,
     .curriculo {
-        padding: 7px 6px;
+        padding: 7px 5px;
         font-size: 10px;
     }
 
     .menu {
-        top: 70px;
         max-width: calc(100vw - 24px);
     }
-
-    header:has(.menu.ativo) {
-        margin-bottom: 225px;
-    }
-
 
     /* SOBRE */
 
     h1 {
-        font-size: 25px;
-    }
-
-    .sobre_texto {
-        font-size: 13px;
+        font-size: 24px;
     }
 
     .perfil {
-        width: 170px;
-        height: 170px;
+        width: 160px;
+        height: 160px;
     }
-
 
     /* PROJETOS */
 
     .projetos_titulo h2 {
-        font-size: 31px;
+        font-size: 29px;
     }
 
     .projeto_item {
-        grid-template-columns: 22px minmax(0, 1fr) 18px;
-        gap: 6px;
+        grid-template-columns: 20px minmax(0, 1fr) 15px;
+        gap: 5px;
     }
 
     .projeto_info h3 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .projeto_info p {
@@ -869,41 +841,44 @@ header {
     }
 
     .projeto_tecnologias {
-        font-size: 6px;
+        font-size: 8px;
     }
 
+    /* EXPERIÊNCIA E FORMAÇÃO */
 
-    /* EXPERIÊNCIA */
-
-    .experiencia_titulo h2 {
-        font-size: 31px;
+    .experiencia_titulo h2,
+    .formacao_titulo h2 {
+        font-size: 28px;
     }
 
-    .experiencia_item {
-        grid-template-columns: 35px 10px minmax(0, 1fr);
+    .experiencia_item,
+    .formacao_item {
+        grid-template-columns: 38px 10px minmax(0, 1fr);
     }
 
-    .experiencia_conteudo {
-        padding-left: 15px;
+    .experiencia_conteudo,
+    .formacao_conteudo {
+        padding-left: 12px;
     }
 
-    .experiencia_conteudo h3 {
-        font-size: 18px;
+    .experiencia_conteudo h3,
+    .formacao_conteudo h3 {
+        font-size: 17px;
     }
 
-    .experiencia_conteudo p {
+    .experiencia_conteudo p,
+    .formacao_conteudo p {
         font-size: 11px;
     }
-
 
     /* HABILIDADES */
 
     .apresentacao__titulo {
-        font-size: 31px;
+        font-size: 28px;
     }
 
     .accordion-button {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .accordion-body {
@@ -911,45 +886,36 @@ header {
     }
 
     .carousel-item img {
-        width: 85%;
-        max-width: 85%;
-        max-height: 160px;
+        max-width: 90%;
+        max-height: 155px;
     }
-
 
     /* CONTATO */
 
     .contato_titulo h2 {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .contato_item {
-        grid-template-columns: 65px minmax(0, 1fr);
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 7px;
     }
 
     .contato_item p {
         font-size: 11px;
     }
 
+    .contato_item span {
+        font-size: 8px;
+    }
 
     /* FOOTER */
 
     footer {
-        height: 65px;
-        padding: 10px 12px;
+        padding: 9px 12px;
     }
 
     footer p {
         font-size: 8px;
-    }
-}
-
-@media (max-width: 600px) {
-    .secao_numero {
-        margin-bottom: 35px;
-    }
-
-    .contato_titulo .secao_numero {
-        margin-bottom: 25px;
     }
 }
